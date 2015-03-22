@@ -1,86 +1,94 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel=stylesheet type="text/css" href="test.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <title>申請加入課程</title>
   </head>
   <body>
+    <article id="apply">
     <header>
-      <img width="100" src="http://pic15.nipic.com/20110627/6132974_165727461000_2.jpg">
-      <img src="http://dct.cs.nccu.edu.tw/image/header_word.png">
-      
-      <nav align="right">
-        <input type="button" onclick="location.href='http://chwang0324.github.io/Web_assign1/course.html'" value="回課程大綱" style="width:100px; height:30px;">
-        <input type="button" onclick="location.href='http://wa.nccu.edu.tw/QryTor/'" value="回課程查詢" style="width:100px; height:30px;">
-        <input type="button" onclick="location.href='https://selectcourse.nccu.edu.tw/remain/'" value="選課餘額查詢" style="width:100px; height:30px;">
-        <input type="button" onclick="location.href='http://www.nccu.edu.tw/'" value="回政大首頁" style="width:100px; height:30px;">
+      <img src="http://chwang0324.github.io/Web_assign1/nccu.gif" class="logo logo_1">
+      <img src="http://dct.cs.nccu.edu.tw/image/header_word.png" class="logo logo_2">
+        
+      <nav>
+        <input type="button" onclick="location.href='http://chwang0324.github.io/Web_assign1/course.html'" value="回課程大綱" class="button-up">
+        <input type="button" onclick="location.href='http://wa.nccu.edu.tw/QryTor/'" value="回課程查詢" class="button-up">
+        <input type="button" onclick="location.href='https://selectcourse.nccu.edu.tw/remain/'" value="選課餘額查詢" class="button-up">
+        <input type="button" onclick="location.href='http://www.nccu.edu.tw/'" value="回政大首頁" class="button-up">
       </nav>
     </header>
+    <br>
     <hr>
-    <h1 style="color: blue" align="center">Web程式設計<br>Web Programming<br></h1>
-    <h2 align="center">授課教師：余能豪</h2>
-    <h2 align="center">申請加入此課程學生資料</h2>
+    <h1>Web程式設計<br>Web Programming<br></h1>
+    <h2 id="teacher">授課教師：余能豪</h2>
+    <h2 id="data">申請加入此課程學生資料</h2>
 
     <form>
-      <table style="border:3px #0B0B61 solid; padding:5px;" width="80%" rules="all" align="center">
+      <table id="applytable">
         <ul type="none">
           <tr>
             <td>
           　<li type="none" align="center">
-             <label for="name" style="font-size: 20pt">姓名</label><br>
-             <input type="text" name="n" id="name" required placeholder="Enter Your Name" style="width: 200px; height: 30px"><br><br><br>
+             <label for="name">姓名</label><br>
+             <input type="text" name="n" id="name" required placeholder="Enter Your Name"><br><br><br>
               </li>
             </td>
           </tr>
           <tr>
             <td>
             <li type="none" align="center">
-              <label for="ID" style="font-size: 20pt">學號</label><br>
-              <input type="text" name="id" id="ID" required placeholder="Enter Your Student ID" title="Student ID" style="width: 200px; height: 30px" pattern=[0-9]><br><br><br>
+              <label for="ID">學號</label><br>
+              <input type="text" name="id" id="ID" required placeholder="Enter Your Student ID" title="Student ID" pattern=[0-9]><br><br><br>
               </li>
             </td>
           </tr>
           <tr>
             <td>
               <li type="none" align="center">
-                <label style="font-size: 20pt">性別</label><br>
+                <label>性別</label><br>
                 <input type="radio" name="s" value="m" id="male">
-                <label for="male">男</label>
+                <label for="male" class="sex">男</label>
                 <input type="radio" name="s" value="f" id="female">
-                <label for="female">女</label><br><br><br>
+                <label for="female" class="sex">女</label><br><br><br>
               </li>
             </td>
           </tr>
           <tr>
             <td>
               <li type="none" align="center">
-                <label for="department" style="font-size: 20pt">科系</label><br>
-                <input type="text" name="d" id="department" required placeholder="Enter Your Department" style="width: 200px; height: 30px"><br><br><br>
+                <label for="department">科系</label><br>
+                <input type="text" name="d" id="department" required placeholder="Enter Your Department"><br><br><br>
               </li>
             </td>
           </tr>
           <tr>
             <td>
               <li type="none" align="center">
-                <label for="email" style="font-size: 20pt">信箱</label><br>
-                <input type="email" name="e" id="email" required placeholder="Enter Your Email" style="width: 200px; height: 30px"><br><br><br>
+                <label for="email">信箱</label><br>
+                <input type="email" name="e" id="email" required placeholder="Enter Your Email"><br><br><br>
               </li>
             </td>
           </tr>
           <tr>
             <td>
               <li type="none" align="center">
-                <label for="cellphone" style="font-size: 20pt">手機號碼</label><br>
-                <input type="text" name="c" id="cellphone" required placeholder="Enter Your Cell Phone Number" title="Cell Phone Number" style="width: 200px; height: 30px" pattern=[0-9]{10}><br><br><br>
+                <label for="cellphone">手機號碼</label><br>
+                <input type="text" name="c" id="cellphone" required placeholder="Enter Your Cell Phone Number" title="Cell Phone Number" pattern=[0-9]{10}><br><br><br>
               </li>
             </td>
           </tr>
         </ul>
       </table>
-      <p align="center">
-        <input type="submit" value="送出資料" style="background-color:#AAAAAA; font-size:13pt; width:120px; height:40px;">
-        <input type="button" onclick="history.back()" value="回到上一頁" style="background-color:#AAAAAA; font-size:13pt; width:120px; height:40px;">
+      <div>
+      <p>
+        <input type="submit" value="送出資料" class="button-down">
+        <input type="button" onclick="history.back()" value="回到上一頁" class="button-down">
       </p>
+      </div>
     </form>
+    </article>
   </body>
 </html>
