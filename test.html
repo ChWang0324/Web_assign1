@@ -11,7 +11,7 @@
     <article id="apply">
     <header>
       <img src="http://chwang0324.github.io/Web_assign1/nccu.gif" class="logo logo_1">
-      <img src="http://dct.cs.nccu.edu.tw/image/header_word.png" class="logo logo_2">
+      <img src="http://chwang0324.github.io/Web_assign1/header_word.png" class="logo logo_2">
         
       <nav>
         <input type="button" onclick="location.href='http://chwang0324.github.io/Web_assign1/course.html'" value="回課程大綱" class="button-up">
@@ -23,6 +23,9 @@
     <br>
     <hr>
     <h1>Web程式設計<br>Web Programming<br></h1>
+    <div class="box">
+      <div class="reflection"></div>
+    </div>
     <h2 id="teacher">授課教師：余能豪</h2>
     <h2 id="data">申請加入此課程學生資料</h2>
 
@@ -31,58 +34,94 @@
         <ul type="none">
           <tr>
             <td>
-          　<li type="none" align="center">
-             <label for="name">姓名</label><br>
+          　<li type="none">
+             <label for="name" class="textlabel">姓名</label><br>
              <input type="text" name="n" id="name" required placeholder="Enter Your Name"><br><br><br>
               </li>
             </td>
           </tr>
           <tr>
             <td>
-            <li type="none" align="center">
-              <label for="ID">學號</label><br>
+            <li type="none">
+              <label for="ID" class="textlabel">學號</label><br>
               <input type="text" name="id" id="ID" required placeholder="Enter Your Student ID" title="Student ID" pattern=[0-9]><br><br><br>
               </li>
             </td>
           </tr>
           <tr>
             <td>
-              <li type="none" align="center">
-                <label>性別</label><br>
-                <input type="radio" name="s" value="m" id="male">
-                <label for="male" class="sex">男</label>
-                <input type="radio" name="s" value="f" id="female">
-                <label for="female" class="sex">女</label><br><br><br>
+              <li type="none">
+                <div class="sexdiv">
+                  <label class="textlabel">性別</label><br>
+                  <div class="radio_inline">
+                    <input type="radio" name="s" value="m" id="male" class="sexinput">    
+                    <label for="male" class="sex">男性</label>
+                  </div>
+                  <div class="radio_inline">
+                    <input type="radio" name="s" value="f" id="female" class="sexinput"> 
+                    <label for="female" class="sex">女性</label>
+                  </div>
+                </div>
               </li>
             </td>
           </tr>
           <tr>
             <td>
-              <li type="none" align="center">
-                <label for="department">科系</label><br>
+              <li type="none">
+                <label for="department" class="textlabel">科系</label><br>
                 <input type="text" name="d" id="department" required placeholder="Enter Your Department"><br><br><br>
               </li>
             </td>
           </tr>
           <tr>
             <td>
-              <li type="none" align="center">
-                <label for="email">信箱</label><br>
+              <li type="none">
+                <div class="gradelist">
+                  <label for="grade" class="textlabel">年級</label>        
+                  <div class="radiodiv">
+                    <input type="radio" name="radio" id="radio1" class="radiograde" checked/>
+                    <label for="radio1" class="radiolabel">一年級</label>
+                  </div>
+                  <div class="radiodiv">
+                    <input type="radio" name="radio" id="radio2" class="radiograde"/>
+                    <label for="radio2" class="radiolabel">二年級</label>
+                  </div>                  
+                  <div class="radiodiv">
+                    <input type="radio" name="radio" id="radio3" class="radiograde"/>
+                    <label for="radio3" class="radiolabel">三年級</label>
+                  </div>
+                  <div class="radiodiv">
+                    <input type="radio" name="radio" id="radio4" class="radiograde"/>
+                    <label for="radio4" class="radiolabel">四年級</label>
+                  </div>
+                  <div class="radiodiv">
+                    <input type="radio" name="radio" id="radio5" class="radiograde"/>
+                    <label for="radio5" class="radiolabel">五年級以上</label>
+                  </div>
+                </div>
+                <br><br><br>
+              </li>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <li type="none">
+                <label for="email" class="textlabel">信箱</label><br>
                 <input type="email" name="e" id="email" required placeholder="Enter Your Email"><br><br><br>
               </li>
             </td>
           </tr>
           <tr>
             <td>
-              <li type="none" align="center">
-                <label for="cellphone">手機號碼</label><br>
+              <li type="none">
+                <label for="cellphone" class="textlabel">手機號碼</label><br>
                 <input type="text" name="c" id="cellphone" required placeholder="Enter Your Cell Phone Number" title="Cell Phone Number" pattern=[0-9]{10}><br><br><br>
               </li>
             </td>
           </tr>
         </ul>
       </table>
-      <div>
+      <div class="submitbutton">
       <p>
         <input type="submit" value="送出資料" class="button-down">
         <input type="button" onclick="history.back()" value="回到上一頁" class="button-down">

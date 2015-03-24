@@ -30,6 +30,15 @@ nav {
   border-radius: 10px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   background: rgb(120, 184, 230);
+  cursor: pointer;
+  -webkit-transition: width 2s, height 2s, font-size 2s;
+  transition: width 2s, height 2s, font-size 2s;
+}
+
+.button-up:hover {
+  width: 150px;
+  height: 40px;
+  font-size: 18px;
 }
 
 hr {
@@ -42,6 +51,7 @@ h1 {
   font-family: 'Montserrat', "Yu Gothic", SimHei;
   color: blue;
   text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 5px red, 0 0 15px darkred;
 }
 
 h2 {
@@ -50,13 +60,72 @@ h2 {
   text-align: center;
 }
 
+body {
+    -webkit-perspective: 700;
+  -moz-perspective: 700;
+  perspective: 700;
+  background:#FFF;
+}
+
+.box {
+    width: 500px;
+    height: 300px;
+    background:#fff;
+    overflow:hidden;
+    -webkit-animation: box-animation 5s ease infinite alternate;
+  -moz-animation: box-animation 5s ease infinite alternate;
+  animation: box-animation 5s ease infinite alternate;
+  position: relative;
+  margin: 50px auto;
+}
+
+.reflection {
+    width: 300%;
+    height: 100%;
+    -webkit-animation: reflection-animation 5s ease infinite alternate;
+  -moz-animation: reflection-animation 5s ease infinite alternate;
+  animation: reflection-animation 5s ease infinite alternate;
+    background:-webkit-gradient(linear,100% 0%,0% 100%,color-stop(0,rgba(255,255,255,0)),color-stop(.5,rgba(255,255,255,0)),color-stop(.5,rgba(255,255,255,0)),color-stop(1,rgba(255,255,255,0)));
+  background:url(http://infinitemarketing.info/wp-content/uploads/2014/09/infinitemarketing-web-hosting-for-your-business.png) repeat-y;
+}
+
+@-webkit-keyframes box-animation {
+    0% { -webkit-transform:rotateY(15deg); }
+    50% { -webkit-transform:rotateY(0deg);}
+  100% { -webkit-transform:rotateY(-15deg);}
+}
+@-webkit-keyframes reflection-animation {
+    0% { -webkit-transform: translateX(-30%); }
+    100% { -webkit-transform: translateX(10%); }
+}
+
+@-moz-keyframes box-animation {
+    0% { -moz-transform:rotateY(15deg); }
+    50% { -moz-transform:rotateY(0deg);}
+  100% { -moz-transform:rotateY(-15deg);}
+}
+@-moz-keyframes reflection-animation {
+    0% { -moz-transform: translateX(-20%); }
+    100% { -moz-transform: translateX(0%); }
+}
+
+@keyframes box-animation {
+    0% { transform:rotateY(15deg); }
+    50% { transform:rotateY(0deg);}
+  100% { transform:rotateY(-15deg);}
+}
+@keyframes reflection-animation {
+    0% { transform: translateX(-60%); }
+    100% { transform: translateX(0%); }
+}
+
 #teacher {
   color: blue;
 }
 
 #applytable {
-  border-collapse:collapse;
-  width: 50%;
+  border-collapse: collapse;
+  width: 70%;
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
@@ -76,35 +145,237 @@ input[type=text], input[type=email] {
   font-style:italic;
   text-align: center;
   border: 3px outset #FFA853;
+  border-style: inset;
   background-color: #F7F778;
+  -webkit-transition: width 2s, height 2s, font-size 2s;
+  transition: width 2s, height 2s, font-size 2s;
 }
 
-label {
-  cursor:pointer;
+input[type=text]:hover, input[type=email]:hover {
+  width: 500px;
+  height: 45px;
+  font-size: 30px;
+}
+
+li {
+  text-align: center;
+}
+
+.textlabel {
+  cursor: pointer;
   font-size: 30px;
   font-family: MS PGothic, Meiryo, cursive, "標楷體";
   line-height: 2;
 }
 
-.sex {
-  font-size: 25px;
+label.sex {  
+  display: inline-block;  
+  cursor: pointer;  
+  position: relative;  
+  padding-left: 25px;  
+  margin-right: 15px;  
+  font-size: 25px;  
   font-family: MS PGothic, Meiryo, cursive, "標楷體";
   line-height: 2;
 }
-
-.button-down {
-  background-color:#AAAAAA;
-  font-size:15pt;
-  width:120px;
-  height:40px;
-  border-radius: 10px;
-  font-family: Microsoft YaHei, Monaco, "標楷體", sans-serif;
+input.sexinput {
+  display: none;
 }
 
-div {
+.radio_inline {
+/*  display: inline-block;*/
+  margin-left: 10px;
+  color: #999;
+  font-size: 25px;
+  line-height: 3;
+  position: relative;
+}
+
+[class*="sexdiv"]{
+  margin: 10px;
+}
+
+.radio_inline label {
+  position: relative;
+  padding-left: 25px;
+}
+
+.radio_inline label:before{
+  background:#acb5ba;
+  content: "";
+  height: 15px;
+  left: 0;
+  position: absolute;
+  top: 2px;
+  width: 15px;
+  border-radius:4px;
+}
+
+.radio_inline label:after{
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  content: "";
+  height: 9px;
+  left: 6px;
+  position: absolute;
+  top: 3px;
+  width: 4px;
+  transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+}
+
+.radio_inline input[type="radio"]{
+   cursor: pointer; 
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+}
+
+.radio_inline input[type="radio"]:hover + label:after{ 
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   border-color: #999;
+}
+
+.radio_inline input[type="radio"]:checked + label:after,  .radio_inline input[type="radio"]:checked + label:before{
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.radio_inline input[type="radio"]:checked + label:before{
+  background: #12B555;
+}
+
+.radio_inline input[type="radio"]:checked + label{
+  color: #12B555;
+}
+
+.sexdiv .radio_inline label:before{
+  background:none;
+  border:2px solid;
+  border-radius:100%; -moz- border-radius:100%; -webkit- border-radius:100%;
+}
+.sexdiv .radio_inline label:after{
+  width:6px;
+  height:15px;
+  top:-3px;
+  left:8px
+}
+.sexdiv .radio_inline input[type="radio"]:checked + label:before, .sexdiv .radio_inline input[type="radio"]:checked + label:after{
+  background:none;
+   border-color:#12B555;
+}
+
+
+.button-down {
+  background-color: #AAAAAA;
+  font-size: 15pt;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  font-family: Microsoft YaHei, Monaco, "標楷體", sans-serif;
+  cursor: pointer;
+}
+
+.button-down:hover {
+  width: 160px;
+  height: 50px;
+  font-size: 22px;
+}
+
+div.submitbutton {
   text-align: center;
   display: inline;
 }
 
+div.gradelist {
+  margin: 0;
+  display: inline-block;
+}
 
+div.radiodiv {
+  clear: both;
+/*  margin: 0 50px;*/
+}
+
+.radiolabel {
+  margin: 40px 0;
+  font-family: sans-serif;
+  font-weight: normal;
+/*  margin: 10px;*/
+  color: #999;
+  background-color: #eee;
+  
+  width: 200px;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+}
+
+input.radiograde:empty {
+/*  margin-left: -999px;*/
+  display: none;
+}
+
+input.radiograde:empty ~ label {
+  position: relative;
+  float: left;
+  line-height: 2.5em;
+  text-indent: 1.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.radiograde:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+input.radiograde:hover:not(:checked) ~ label:before {
+  content:'\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+input.radio:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+input.radiograde:checked ~ label:before {
+  content: '\2714';
+  text-indent: 0em;
+  color: #9CE2AE;
+  background-color: #4DCB6D;
+}
+
+input.radiograde:checked ~ label {
+  color: green;
+  font-size: 1.2em;
+  font-family: "微軟正黑體";
+}
+
+input.radiograde:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
 
